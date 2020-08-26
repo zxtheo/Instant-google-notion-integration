@@ -30,3 +30,4 @@
    # In collection.py L154 is line below
               if view is None or isinstance(view, CalendarView):
      ```
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
