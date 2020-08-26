@@ -30,4 +30,8 @@
    # In collection.py L154 is line below
               if view is None or isinstance(view, CalendarView):
      ```
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+  * making sure your notion calendar has these columns:
+  
+    ![notion table columns](https://github.com/zxtheo/Instant-google-notion-integration/blob/master/callendar%20view.PNG)
+    
+    and ensure that the options for "calendar" are set to the calendars previously set in secrets.json
