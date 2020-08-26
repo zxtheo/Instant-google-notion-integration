@@ -12,6 +12,7 @@ NOTION_CLIENT_TOKEN_V2 = ""
 NOTION_CALENDAR_VIEW = ""
 GOOGLE_CALENDAR_ID = ""
 SCOPES = ""
+CALENDARS = 
 
 
 triggered = False
@@ -21,6 +22,7 @@ with open("secrets.json", "r") as secretsFile:
     NOTION_CALENDAR_VIEW = data["notion-calendar-view"]
     NOTION_CLIENT_TOKEN_V2 = data["notion-client-token-V2"]
     GOOGLE_CALENDAR_ID = data["google-calendar-id"]
+    CALENDARS = data["calendars"]
     SCOPES = ["https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/calendar.events"]
 
 
@@ -52,8 +54,8 @@ calendar_ids = get_google_calendar_ids()
 ### get calenndar events
 def update_notion_events():
     event_list = []
-    calendars = ['Deadlines', 'Exams', 'Meetings', 'Study', 'TimeTable', 'Work', "Extra"]
-    for calendar in calendars:
+    CALENDARS = ['Deadlines', 'Exams', 'Meetings', 'Study', 'TimeTable', 'Work', "Extra"]
+    for calendar in CALENDARS:
         result = service.events().list(calendarId=calendar_ids[calendar], timeZone="Europe/London").execute()
         events = result.get('items', [])
         for event in events:
